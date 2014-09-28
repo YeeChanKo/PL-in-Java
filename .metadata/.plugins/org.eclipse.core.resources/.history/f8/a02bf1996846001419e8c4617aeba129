@@ -1,7 +1,0 @@
-package player;
-
-public class Frame
-{
-    int[] bowl = new int[2];
-    int result;
-}

@@ -1,9 +1,0 @@
-package player;
-
-public class LastFrame extends Frame
-{
-    LastFrame()
-    {
-        bowl = new int[3];
-    }
-}
