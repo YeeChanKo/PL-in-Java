@@ -40,6 +40,9 @@ public class Play
 
         PlayGame(playersTable);
 
+        System.out.println("(경기가 종료되었다)");
+        System.out.println();
+        
         CloseKeyBoard();
     }
 
@@ -68,6 +71,7 @@ public class Play
                     {
                         break; // 스트라이크일 경우 두번째 볼 진행 안하고 다음 선수로
                     }
+                    System.out.println();
                 }
                 System.out.println();
             }
@@ -85,7 +89,9 @@ public class Play
                 {
                     break;
                 }
+                System.out.println();
             }
+            System.out.println();
         }
     }
 
@@ -94,18 +100,37 @@ public class Play
     {
         String message = "[" + fNumber + "번째 프레임] " + pNumber + "번 선수의 " + bNumber + "번째 볼: ";
         int bResult = GetInt(message);
+
+        Player player = playersTable[pNumber-1];
+        int firstBowl = player.GetLog(fNumber, 1);
+        int secondBowl = player.GetLog(fNumber, 2);
         
-        if(bNumber == 2)
+        // 스페어인 경우만 뽑아내서
+        if(bNumber == 2 && fNumber != 10)
         {
-            int firstBowlResult = playersTable[pNumber-1].GetLog(fNumber, bNumber-1);
-            while(firstBowlResult + bResult > 10)
-            {
-                bResult = GetInt("잘못된 숫자입니다: [한 프레임의 핀 수는 10개]\n다시 입력하세요: ");
-            }            
+            bResult = EnsureSecondBowl(bResult, firstBowl);
+        }
+        else if(bNumber == 2 && fNumber == 10 && firstBowl != 10)
+        {
+            bResult = EnsureSecondBowl(bResult, firstBowl);
+        }
+        else if(bNumber == 3 && fNumber == 10 && firstBowl == 10 && secondBowl != 10)
+        {
+            bResult = EnsureSecondBowl(bResult, secondBowl);
         }
         
         playersTable[pNumber - 1].AddLog(fNumber, bNumber, bResult);
         return bResult;
+    }
+    
+    private static int EnsureSecondBowl(int secondBowlInput, int firstBowlResult) // 스패어일 경우 범위 제한
+    {
+        int secondBowlResult = secondBowlInput;
+        while(secondBowlResult + firstBowlResult > 10)
+        {
+            secondBowlResult = GetInt("잘못된 숫자입니다: [한 프레임의 핀 수는 10개]\n다시 입력하세요: ");
+        }
+        return secondBowlResult;
     }
 
     private static void CloseKeyBoard()

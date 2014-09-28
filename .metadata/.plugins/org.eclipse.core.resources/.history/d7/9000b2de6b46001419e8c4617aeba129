@@ -1,0 +1,32 @@
+package player;
+
+public class Frame
+{
+    protected int[] bowlResult;
+    protected int frameResult;
+    
+    Frame()
+    {
+        bowlResult = new int[2];
+    }
+    
+    public void SetBowl(int bowlTurn, int bowlResult)
+    {
+        bowlResult[bowlTurn-1] = bowlResult;
+    }
+    
+    public void SetResult(int frameResult)
+    {
+        frameResult = frameResult;
+    }
+    
+    public int GetBowl(int bowlTurn)
+    {
+        return bowlResult[bowlTurn-1];
+    }
+    
+    public int GetResult()
+    {
+        return frameResult;
+    }
+}

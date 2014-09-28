@@ -54,4 +54,9 @@ public class Player
         Frame temp = Log.get(fNumber - 1);
         temp.frameResult = fResult;
     }
+
+    public int GetFrameResult(int fNumber)
+    {
+        return Log.get(fNumber - 1).frameResult;
+    }
 }

@@ -1,0 +1,26 @@
+package test;
+
+public class runner
+{
+    public static void main(String[] args)
+    {
+
+        try
+        {
+            int i2 = Integer.parseInt("abc");
+            System.out.println("i2: " + i2);
+        } catch (NumberFormatException e)
+        {
+            System.err.println("i2 is invalid.");
+        }
+        try
+        {
+            int i1 = Integer.parseInt("123");
+            System.out.println("i1: " + i1);
+        } catch (NumberFormatException e)
+        {
+            System.err.println("i1 is invalid.");
+        }
+
+    }
+}

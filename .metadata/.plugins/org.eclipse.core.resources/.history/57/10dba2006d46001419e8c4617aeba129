@@ -1,0 +1,15 @@
+package player;
+
+import java.util.ArrayList;
+
+public class Player
+{
+    private ArrayList<Frame> Log = new ArrayList<Frame>();
+
+    public void AddLog(int fNumber, int bNumber, int bResult)
+    {
+        Frame temp = new Frame();
+        temp.SetBowlResult(bNumber, bResult);
+        Log.add(fNumber - 1, temp);
+    }
+}
