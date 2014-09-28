@@ -10,7 +10,7 @@ public class Scorer
     {
         int frameResultSum[] = new int[10]; // 사람 수만큼
 
-        String top = "[선수]\t[1]\t[2]\t[3]\t[4]\t[5]\t[6]\t[7]\t[8]\t[9]\t[10]";
+        String top = "[선수]\t[1]\t[2]\t[3]\t[4]\t[5]\t[6]\t[7]\t[8]\t[9]\t[10]\t\t[총점]";
         System.out.println(top);
 
         // ----------------------------------------------------------------------------진행중선수전
@@ -32,7 +32,7 @@ public class Scorer
                 }
                 else
                 {
-                    middle += ShowLastFrameBowlResult(player, 3, p, frameResultSum); // 마지막 프레임: 세번째 볼까지 나오게
+                    middle += ShowLastFrameBowlResult(player, 3, p, frameResultSum) + "\t" + frameResultSum[p-1]; // 마지막 프레임: 세번째 볼까지 나오게
                 }
             }
             System.out.println(middle);
@@ -74,6 +74,10 @@ public class Scorer
                 FrameResultCalculator(player, fNumber);
                 frameResultSum[pNumber - 1] += player.GetFrameResult(fNumber);
                 bottom += frameResultSum[pNumber - 1] + "\t";
+                if(bNumber == 3)
+                {
+                    bottom += "\t" + frameResultSum[pNumber - 1];
+                }
             }
 
             System.out.println(middle);
