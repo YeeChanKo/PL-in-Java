@@ -3,8 +3,8 @@ class Coffee extends Menu
     Coffee(String name, int price)
     {
         super(name, price);
-        process[1] = "ÇÊÅÍ·Î Ä¿ÇÇ¸¦ ¿ì·Á³»´Â Áß";
-        process[3] = "¼³ÅÁ°ú Ä¿ÇÇ¸¦ Ãß°¡ÇÏ´Â Áß";
+        process[1] = "ï¿½ï¿½ï¿½Í·ï¿½ Ä¿ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½";
+        process[3] = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½Ç¸ï¿½ ï¿½ß°ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½";
     }
 }
 
@@ -12,7 +12,7 @@ class HouseBlend extends Coffee
 {
     HouseBlend()
     {
-        super("ÇÏ¿ì½º ºí·»µå", 1000);
+        super("ï¿½Ï¿ì½º ï¿½ï¿½ï¿½ï¿½", 1000);
     }
 }
 
@@ -20,7 +20,7 @@ class DarkRoast extends Coffee
 {
     DarkRoast()
     {
-        super("´ÙÅ© ·Î½ºÆ®", 1500);
+        super("ï¿½ï¿½Å© ï¿½Î½ï¿½Æ®", 1500);
     }
 }
 
@@ -28,7 +28,7 @@ class Decaf extends Coffee
 {
     Decaf()
     {
-        super("µðÄ³ÇÁ", 1200);
+        super("ï¿½ï¿½Ä³ï¿½ï¿½", 1200);
     }
 }
 
@@ -36,6 +36,6 @@ class Espresso extends Coffee
 {
     Espresso()
     {
-        super("¿¡½ºÇÁ·¹¼Ò", 900);
+        super("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", 900);
     }
 }
